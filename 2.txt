@@ -1,0 +1,102 @@
+aaaaa
+Administrator@EKJ8CH45ZSOJSCI MINGW64 ~/Desktop
+$ cd /d
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d
+$ mkdir -p test/res
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d
+$ cd test
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test
+$ touch 1.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test
+$ cd res
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res
+$ git init
+Initialized empty Git repository in D:/test/res/.git/
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ touch test.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ echo 新建文件 > test.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git add -A
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git commit -m "first"
+[master (root-commit) 6592bd0] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ echo 测试第二次提交 > test.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git add -A
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git commit -m "second"
+[master 631ebcf] second
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ touch 2.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git add -A
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ echo aaaaa > 2.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git add -A
+warning: LF will be replaced by CRLF in 2.txt.
+The file will have its original line endings in your working directory
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git commit -m "third"
+[master 2902e1f] third
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git log
+commit 2902e1fcd519214d53889137480b151d87816790 (HEAD -> master)
+Author: Chen <1798053280@qq.com>
+Date:   Mon Mar 4 17:27:27 2019 +0800
+
+    third
+
+commit 631ebcf2e6c0d2c3723c6bad3838b1a3d37f2480
+Author: Chen <1798053280@qq.com>
+Date:   Mon Mar 4 17:25:07 2019 +0800
+
+    second
+
+commit 6592bd0e36beb645d780450a76199cf1df8e1f45
+Author: Chen <1798053280@qq.com>
+Date:   Mon Mar 4 17:23:04 2019 +0800
+
+    first
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git reset --hard 2902e1
+HEAD is now at 2902e1f third
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git reset --hard 631ebcf
+HEAD is now at 631ebcf second
+
+Administrator@EKJ8CH45ZSOJSCI MINGW64 /d/test/res (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
